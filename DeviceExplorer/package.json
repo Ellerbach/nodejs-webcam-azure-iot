@@ -1,0 +1,17 @@
+{
+  "name": "DeviceExplorer",
+  "version": "0.0.0",
+  "description": "DeviceExplorer",
+  "main": "app.js",
+  "author": {
+    "name": "laurelle",
+    "email": ""
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "azure-iothub": "^1.0.0-preview.6",
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}

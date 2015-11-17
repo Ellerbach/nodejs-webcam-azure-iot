@@ -1,0 +1,17 @@
+{
+  "name": "RPICam",
+  "version": "0.0.0",
+  "description": "RPICam",
+  "main": "app.js",
+  "author": {
+    "name": "laurelle",
+    "email": ""
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "azure": "^0.10.6",
+    "azure-iot-common": "^1.0.0-preview.5",
+    "azure-iot-device": "^1.0.0-preview.5",
+    "azure-iothub": "^1.0.0-preview.5"
+  }
+}

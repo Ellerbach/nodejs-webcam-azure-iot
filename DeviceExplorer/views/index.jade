@@ -1,0 +1,24 @@
+﻿extends layout
+
+block content
+  .jumbotron
+    h1 Azure IoT demo
+    p.lead Thise node.js website allows to contact a RaspberryPi v2 running Linux. It goes thru Azure IoT Hub. On this page, you'll send a message to Azure IoT Hub. The RPI will the receive the message, process it, take a picture and upload it in an Azure blob storage. This can take up to 10 seconds.
+    p
+      a.btn.btn-primary.btn-large(href='/sendmsg') Ask for an image &raquo;
+  .row
+    .col-md-4
+      h2 See the image
+      p See the image from the Azure blob storage. You'll be redirected to this page once the picture will be uploaded.
+      p
+        a.btn.btn-default(href='/image') See the image &raquo;
+    .col-md-4
+      h2 Read how to setup this demo
+      p The code to run on the RPI is available on the blog post below. It will take you step by step to setup the Azure IoT hub, create the node.js app on the RPI. It will show how to handle all the messages between the RPI and IoT Hub.
+      p
+        a.btn.btn-default(href='http://blogs.msdn.com/b/laurelle/archive/2015/11/13/azure-iot-hub-uploading-a-webcam-picture-in-an-azure-blob-with-node-js-on-windows-and-linux.aspx') Learn more &raquo;
+    .col-md-4
+      h2 Microsoft Azure
+      p You can easily publish to Microsoft Azure using Node.js Tools for Visual Studio. Find out how you can host your application using a free trial today.
+      p
+        a.btn.btn-default(href='http://azure.microsoft.com') Learn more &raquo;
