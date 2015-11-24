@@ -29,6 +29,16 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/sendmsg', routes.sendmsg);
 app.get('/image', routes.image);
+app.get('/devices', routes.devices);
+app.post('/devices', routes.devices);
+app.get('/devicedetail/:deviceId', routes.devicedetail);
+app.get('/adddevice/:deviceId?', routes.adddevice);
+app.post('/adddevice', routes.adddevice);
+app.get('/removedevice/:deviceId?', routes.removedevice);
+app.post('/removedevice', routes.removedevice);
+app.post('/messages', routes.messages); 
+app.get('/messages', routes.messages);
+app.get('/msgstatus', routes.msgstatus);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
