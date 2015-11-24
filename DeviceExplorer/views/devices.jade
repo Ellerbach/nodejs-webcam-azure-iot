@@ -1,0 +1,52 @@
+﻿extends layout
+
+block content
+  h2 #{title}
+  h3 #{message}
+
+  div.text
+  if(devicelist!=null)
+    table
+      thead
+        tr
+          th
+            | DeviceId
+          th
+            | Prim Key
+          th
+            | Sec key
+          th
+            | Last upd
+          th
+            | Status
+          th
+            | Msg waiting
+      tbody
+        each device in devicelist
+          tr
+            td 
+              a(href='/devicedetail/' + device.deviceId) #{device.deviceId}
+            td
+              | #{device.authentication.SymmetricKey.primaryKey}
+            td
+              | #{device.authentication.SymmetricKey.secondaryKey}
+            td
+              | #{device.lastActivityTime}
+            td
+              | #{device.status}
+            td
+              | #{device.cloudToDeviceMessageCount}
+    p 
+    a(href='/adddevice/') Add a new device
+  
+  div.connbox
+    p please enter your connection string like HostName=XXX.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX
+    form(name="connection", action="/devices", method="post")
+      input(type="text", name="constr")
+      input(type="submit", value="Connect")
+
+   
+
+           
+  
+  

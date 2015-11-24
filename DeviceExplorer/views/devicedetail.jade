@@ -1,0 +1,83 @@
+﻿extends layout
+
+block content
+  h2 #{title}
+  p #{message}
+
+  div.text
+  if(device!=null)
+    table
+      thead
+        tr
+          th
+            | Details
+          th
+            | Values
+      tbody
+          tr
+            td 
+              | Device Id
+            td
+              | #{device.deviceId}
+          tr
+            td
+              | Primary Key
+            td
+              | #{device.authentication.SymmetricKey.primaryKey}
+          tr
+            td
+              | Secondary Key
+            td
+              | #{device.authentication.SymmetricKey.secondaryKey}
+          tr
+            td
+              | Last Activity
+            td
+              | #{device.lastActivityTime}
+          tr
+            td
+              | Generation Id
+            td
+              | #{device.generationId}
+          tr
+            td
+              | Messages waiting
+            td
+              | #{device.cloudToDeviceMessageCount}
+          tr
+            td
+              | etag
+            td
+              | #{device.etag}
+          tr
+            td
+              | Status
+            td
+              | #{device.status}
+          tr
+            td
+              | Status Reason
+            td
+              | #{device.statusReason}
+          tr
+            td
+              | Connection State
+            td
+              | #{device.connectionState}
+          tr
+            td
+              | connectionStateUpdatedTime
+            td
+              | #{device.connectionStateUpdatedTime}
+          tr
+            td
+              | statusUpdatedTime 
+            td
+              | #{device.statusUpdatedTime}
+    a(href='/removedevice/' + device.deviceId) Remove device
+    p
+    p Send message to device
+    form(name="sendmessage", action="/messages", method="post")
+      input(type="text", name="message")
+      input(type="hidden", name="deviceId", value="#{device.deviceId}")
+      input(type="submit", value="Connect")

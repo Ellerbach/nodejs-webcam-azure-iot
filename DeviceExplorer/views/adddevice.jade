@@ -1,0 +1,12 @@
+﻿extends layout
+
+block content
+  h2 #{title}
+  p #{message}
+
+  div.connbox
+  if(deviceId==null)
+    p please enter your device name
+    form(name="adddevice", action="/adddevice", method="post")
+      input(type="text", name="deviceId")
+      input(type="submit", value="Add")
