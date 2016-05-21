@@ -26,7 +26,7 @@ http.createServer(function (req, res) {
     var action = request.pathname;
 
     if (action == '/image.jpg') {
-        webcam.run();
+        webcam.run('image.jpg');
         var img = fs.readFileSync('./image.jpg');
         //console.log('image.jpg ok');
         res.writeHead(200, { 'Content-Type': 'image/jpeg' });
@@ -67,9 +67,9 @@ function pushtoblob(msg)
         }
     });
     //create the picture named image.jpg
-    webcam.run();   
+    webcam.run('imageiot.jpg');   
     // this will upload the picture named image.jpg which needs to be in the same directory as the js file
-    blobSvc.createBlockBlobFromLocalFile('webcam', 'picture', 'image.jpg', function (error, result, response) {
+    blobSvc.createBlockBlobFromLocalFile('webcam', 'picture', 'imageiot.jpg', function (error, result, response) {
         if (!error) {
             // file uploaded
             console.log('file uploaded :-) ');
